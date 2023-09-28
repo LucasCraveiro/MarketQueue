@@ -4,11 +4,16 @@ import "../App.css";
 interface ItemInputProps {
   items: number;
   setItems: React.Dispatch<React.SetStateAction<number>>;
+  addPersonToLine: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const ItemInput: React.FC<ItemInputProps> = ({ items, setItems }) => {
+const ItemInput: React.FC<ItemInputProps> = ({
+  items,
+  setItems,
+  addPersonToLine,
+}) => {
   return (
-    <form>
+    <form onSubmit={addPersonToLine}>
       <input
         className="inputItems"
         required
