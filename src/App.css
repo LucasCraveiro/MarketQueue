@@ -24,7 +24,7 @@
 .checkout {
   margin-left: 20px;
   border-radius: 50px;
-  border: 2px solid black;
+  border: 2px solid #303b59;
   background-color: #303b59;
   color: white;
   transition: 0.2s ease-in-out;
@@ -34,4 +34,17 @@
   border: 2px solid #303b59;
   background-color: white;
   color: #303b59;
+}
+
+.lines {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 40px;
+}
+
+.line {
+  border: 2px solid #303b59;
+  padding: 2rem;
+  border-radius: 10px;
 }

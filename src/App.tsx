@@ -2,9 +2,11 @@ import cartLogo from "./assets/cart.svg";
 import "./App.css";
 import ItemsInput from "./components/ItemsInput";
 import { useState } from "react";
+import Lines from "./components/Lines";
 
 const App = () => {
   const [items, setItems] = useState(0);
+  const [lines, setLines] = useState<number[][]>([[], [], [], [], []]);
 
   return (
     <>
@@ -15,6 +17,7 @@ const App = () => {
       </div>
 
       <ItemsInput items={items} setItems={setItems} />
+      <Lines lines={lines} setLines={setLines} />
     </>
   );
 };
