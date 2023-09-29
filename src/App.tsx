@@ -1,18 +1,12 @@
 import cartLogo from "./assets/cart.svg";
 import "./App.css";
 import ItemsInput from "./components/ItemsInput";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Lines from "./components/Lines";
 
 const App = () => {
   const [items, setItems] = useState(0);
-  const [lines, setLines] = useState<number[][]>([
-    [10, 5, 2],
-    [1],
-    [2],
-    [3],
-    [4],
-  ]);
+  const [lines, setLines] = useState<number[][]>([[], [], [], [], []]);
 
   const addPersonToLine = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,6 +30,21 @@ const App = () => {
       )
     );
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLines((prevLines) =>
+        prevLines.map((line) =>
+          [line[0] - 1, ...line.slice(1)].filter((value) => value > 0)
+        )
+      );
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <>
       <div>
@@ -43,13 +52,13 @@ const App = () => {
           <img src={cartLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-
+      <h1 className="title">Choose the line with least amount of items</h1>
       <ItemsInput
         items={items}
         setItems={setItems}
         addPersonToLine={addPersonToLine}
       />
-      <Lines lines={lines} setLines={setLines} />
+      <Lines lines={lines} />
     </>
   );
 };

@@ -20,7 +20,7 @@ const ItemInput: React.FC<ItemInputProps> = ({
         min={0}
         type="number"
         value={items}
-        onChange={(e) => setItems(e.currentTarget.valueAsNumber)}
+        onChange={(e) => setItems(e.currentTarget.valueAsNumber || 0)}
         placeholder="Enter the number of items"
         name="item"
       />

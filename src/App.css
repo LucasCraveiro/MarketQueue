@@ -1,3 +1,7 @@
+body {
+  background-color: #f3fff6;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -8,6 +12,11 @@
 .logo {
   height: 10em;
   padding: 1.5em;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 80px;
 }
 
 .inputItems {
@@ -30,8 +39,8 @@
   transition: 0.2s ease-in-out;
 }
 
-.checkout:is(:hover) {
-  border: 2px solid #303b59;
+.checkout:is(:hover, :focus-visible, :focus, :active) {
+  border: 2px solid #303b59 !important;
   background-color: white;
   color: #303b59;
 }
@@ -40,11 +49,14 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 40px;
+  margin-top: 80px;
+  min-height: 100px;
 }
 
 .line {
   border: 2px solid #303b59;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
 }

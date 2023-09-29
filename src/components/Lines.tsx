@@ -3,16 +3,16 @@ import "../App.css";
 
 interface LinesProps {
   lines: number[][];
-  setLines: React.Dispatch<React.SetStateAction<number[][]>>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Lines: React.FC<LinesProps> = ({ lines, setLines }) => {
+const Lines: React.FC<LinesProps> = ({ lines }) => {
   return (
     <div className="lines">
       {lines.map((line, index) => (
         <div className="line" key={index}>
-          x
+          {line.map((items) => (
+            <div key={index + self.crypto.randomUUID()}>{items}</div>
+          ))}
         </div>
       ))}
     </div>
