@@ -45,12 +45,25 @@ body {
   color: #303b59;
 }
 
+@media only screen and (max-width: 425px) {
+  .checkout {
+    margin-top: 20px;
+  }
+}
+
 .lines {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 2rem;
   margin-top: 80px;
   min-height: 100px;
+}
+
+@media only screen and (min-width: 600px) {
+  .lines {
+    flex-direction: row;
+  }
 }
 
 .line {
